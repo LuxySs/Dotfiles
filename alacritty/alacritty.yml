@@ -2,8 +2,7 @@
 
 # Import additional configuration files
 #
-# Imports are loaded in order, skipping all missing files, with the importing
-# file being loaded last. If a field is already present in a previous import, it
+# Imports are loaded in order, skipping all missing files, with the importing file being loaded last. If a field is already present in a previous import, it
 # will be replaced.
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
@@ -43,8 +42,7 @@ window:
   #position:
   #  x: 0
   #  y: 0
-
-  # Window padding (changes require restart)
+# Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
@@ -206,7 +204,7 @@ font:
 draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
   #primary:
   #  background: '#1d1f21'
@@ -237,9 +235,9 @@ draw_bold_text_with_bright_colors: true
   #
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  #vi_mode_cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
 
   # Search colors
   #
@@ -401,30 +399,19 @@ draw_bold_text_with_bright_colors: true
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  #save_to_clipboard: false
+  save_to_clipboard: true
 
-#cursor:
-  # Cursor style
-  #style:
-    # Cursor shape
-    #
-    # Values for `shape`:
-    #   - ▇ Block
-    #   - _ Underline
-    #   - | Beam
-    #shape: Block
 
-    # Cursor blinking state
-    #
-    # Values for `blinking`:
-    #   - Never: Prevent the cursor from ever blinking
-    #   - Off: Disable blinking by default
-    #   - On: Enable blinking by default
-    #   - Always: Force the cursor to always blink
-    #blinking: Off
 
-  # Vi mode cursor style
-  #
+
+cursor:
+  style: Underline
+
+  # If this is `true`, the cursor will be rendered as a hollow box when the
+  # window is not focused.
+  unfocused_hollow: true
+  vi_mode_style: Block
+
   # If the vi mode cursor style is `None` or not specified, it will fall back to
   # the style of the active value of the normal cursor.
   #
@@ -448,7 +435,7 @@ draw_bold_text_with_bright_colors: true
   #thickness: 0.15
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
@@ -546,7 +533,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Each mouse binding will specify a:
 #
-# - `mouse`:
+mouse:
 #
 #   - Middle
 #   - Left
@@ -563,10 +550,8 @@ draw_bold_text_with_bright_colors: true
 # And optionally:
 #
 # - `mods` (see key bindings)
-#mouse_bindings:
-#  - { mouse: Right,                 action: ExpandSelection }
-#  - { mouse: Right,  mods: Control, action: ExpandSelection }
-#  - { mouse: Middle, mode: ~Vi,     action: PasteSelection  }
+  mouse_bindings:
+    { mouse: Middle, action: Copy }
 
 # Key bindings
 #
@@ -778,31 +763,74 @@ draw_bold_text_with_bright_colors: true
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
-    # (Windows, Linux, and BSD only)
-  - { key: V,         mods: Control|Shift, action: Paste                       }
-  - { key: V,         mods: Control,       action: Paste                       }
-  - { key: Paste,     mods: None,          action: Paste                       }
-  - { key: C,         mods: Control|Shift, action: Copy                        }
-  - { key: Copy,      mods: None,          action: Copy                        }
-  - { key: Insert,    mods: Shift,         action: PasteSelection              }
-  - { key: Key0,      mods: Control,       action: ResetFontSize               }
-  - { key: Equals,    mods: Control,       action: IncreaseFontSize            }
-  - { key: Plus,      mods: Control,       action: IncreaseFontSize            }
-  - { key: Minus,     mods: Control,       action: DecreaseFontSize            }
-  - { key: F11,       mods: None,          action: ToggleFullscreen            }
-  - { key: L,         mods: Control,       action: ClearLogNotice              }
-  - { key: L,         mods: Control,       chars: "\x0c"                       }
-  - { key: PageUp,    mods: None,          action: ScrollPageUp,   mode: ~Alt  }
-  - { key: PageDown,  mods: None,          action: ScrollPageDown, mode: ~Alt  }
-  - { key: Home,      mods: Shift,         action: ScrollToTop,    mode: ~Alt  }
-  - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
-  
+  - { key: V,         mods: Control|Shift,  action: Paste                          }
+  - { key: V,         mods: Control,        action: Paste                          }
+  - { key: Paste,     mods: None,           action: Paste                          }
+  - { key: C,         mods: Control|Shift,  action: Copy                           }
+  - { key: Copy,      mods: None,           action: Copy                           }
+  - { key: Insert,    mods: Shift,          action: PasteSelection                 }
+  - { key: Key0,      mods: Control,        action: ResetFontSize                  }
+  - { key: Plus,      mods: Control,        action: IncreaseFontSize               }
+  - { key: Minus,     mods: Control,        action: DecreaseFontSize               }
+  - { key: F11,       mods: None,           action: ToggleFullscreen               }
+  - { key: Back,      mods: Control,        chars: "\x1b\x7f"                      } # Delete word
 
-    #Shoule add a vi mode to my config
-  - { key: K,                           mode: Vi|~Search, action: Up           }
-  - { key: J,                           mode: Vi|~Search, action: Down         }
-  - { key: H,                           mode: Vi|~Search, action: Left        }
-  - { key: L,                           mode: Vi|~Search, action: Right       }
+  #do not remove the following, it clears the screen 
+  - { key: L,         mods: Control,       chars: "\x0c"                       }
+
+    #- { key: PageUp,    mods: None,          action: ScrollPageUp                }
+    #- { key: PageDown,  mods: None,          action: ScrollPageDown              }
+    #- { key: Home,      mods: Shift,         action: ScrollToTop                 }
+    #- { key: End,       mods: Shift,         action: ScrollToBottom              }
+  
+    ###vi mode
+  - { key: Space,  mods: Control,                 action: ToggleViMode            }
+    #applies only in vi mode
+  - { key: Space,  mods: Control,       mode: Vi, action: ScrollToBottom          }
+  - { key: I,                           mode: Vi, action: ScrollToBottom          }
+  - { key: G,      mods: Shift,         mode: Vi, action: ScrollToBottom          }
+  - { key: I,                           mode: Vi, action: ToggleViMode            }
+  - { key: C,      mods: Control,       mode: Vi, action: ToggleViMode            }
+  - { key: Escape,                      mode: Vi, action: ClearSelection          }
+  - { key: Y,                           mode: Vi, action: ClearSelection          }
+  - { key: Y,      mods: Control,       mode: Vi, action: ScrollLineUp            }
+  - { key: E,      mods: Control,       mode: Vi, action: ScrollLineDown          }
+  - { key: G,                           mode: Vi, action: ScrollToTop             }
+  - { key: B,      mods: Control,       mode: Vi, action: ScrollPageUp            }
+  - { key: F,      mods: Control,       mode: Vi, action: ScrollPageDown          }
+  - { key: U,      mods: Control,       mode: Vi, action: ScrollHalfPageUp        }
+  - { key: D,      mods: Control,       mode: Vi, action: ScrollHalfPageDown      }
+  - { key: Y,                           mode: Vi, action: Copy                    }
+  - { key: V,                           mode: Vi, action: ToggleNormalSelection   }
+  - { key: V,      mods: Shift,         mode: Vi, action: ToggleLineSelection     }
+  - { key: V,      mods: Control,       mode: Vi, action: ToggleBlockSelection    }
+  - { key: V,      mods: Alt,           mode: Vi, action: ToggleSemanticSelection }
+  - { key: Return,                      mode: Vi, action: Open                    }
+  - { key: H,                           mode: Vi, action: Left                    }
+  - { key: J,                           mode: Vi, action: Down                    }
+  - { key: K,                           mode: Vi, action: Up                      }
+  - { key: L,                           mode: Vi, action: Right                   }
+  - { key: Left,                        mode: Vi, action: Left                    }
+  - { key: Right,                       mode: Vi, action: Right                   }
+  - { key: Up,                          mode: Vi, action: Up                      }
+  - { key: Down,                        mode: Vi, action: Down                    }
+  - { key: Key0,                        mode: Vi, action: First                   }
+  - { key: Key4,                        mode: Vi, action: Last                    }
+  - { key: Key6,   mods: Shift,         mode: Vi, action: FirstOccupied           }
+  - { key: H,      mods: Shift,         mode: Vi, action: High                    }
+  - { key: M,      mods: Shift,         mode: Vi, action: Middle                  }
+  - { key: L,      mods: Shift,         mode: Vi, action: Low                     }
+  - { key: B,                           mode: Vi, action: SemanticLeft            }
+  - { key: W,                           mode: Vi, action: SemanticRight           }
+  - { key: E,                           mode: Vi, action: SemanticRightEnd        }
+  - { key: B,      mods: Shift,         mode: Vi, action: WordLeft                }
+  - { key: W,      mods: Shift,         mode: Vi, action: WordRight               }
+  - { key: E,      mods: Shift,         mode: Vi, action: WordRightEnd            }
+  - { key: Key5,   mods: Shift,         mode: Vi, action: Bracket                 }
+  - { key: Slash,                       mode: Vi, action: SearchForward           }
+  - { key: Slash,  mods: Shift,         mode: Vi, action: SearchBackward          }
+  - { key: N,                           mode: Vi, action: SearchNext              }
+  - { key: N,      mods: Shift,         mode: Vi, action: SearchPrevious          }    
 
 
 

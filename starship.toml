@@ -11,8 +11,14 @@ $nodejs\
 $cmd_duration\
 [](fg:#333333 bg:#333333)\
 $python\
-[ ](fg:#333333)\
+[ ](fg:#333333)
+[ ❯](fg:#A53265)\
+[❯](fg:#BC4C5A)\
+[❯ ](fg:#DB6C4E)
 """
+# replace last line by this to have it only one color
+#[ ❯❯ ](fg:#AB3862, fg:#DB6C4E)
+
 # $character"""
 #\n$character"""
 
@@ -29,7 +35,8 @@ format = "[ $path ]($style)"
 "~/Downloads" = " "
 "~/Music" = " "
 "~/Pictures" = " "
-"~/.config" = ""
+"~/.config" = "⚙️ " 
+"~/Dotfiles" = "⚙️  " # Add this line
 "~" = ""
 
 [git_branch]
