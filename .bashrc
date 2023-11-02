@@ -12,3 +12,4 @@ PS1='[\u@\h \W]\$ '
 EDITOR=nvim
 export EDITOR
 
+PATH=$PATH:$HOME/.local/bin #for streamdeck
