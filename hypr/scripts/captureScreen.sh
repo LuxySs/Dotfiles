@@ -1,3 +1,3 @@
 #!/bin/bash
 
-grim -g "$(slurp -o)" /home/lulu/Pictures/screenshots/$(date +'%s_grim.png')
+grim -g "$(slurp -o)" $HOME/Pictures/screenshots/$(date +'%s_grim.png')
