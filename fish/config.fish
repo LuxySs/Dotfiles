@@ -2,9 +2,12 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-set -g fish_greeting #set to None (greeting message)
-
 starship init fish | source
 
+set -g fish_greeting #set to None (greeting message)
+
+set -gx EDITOR vim
+
 # alisases
-alias siuu="sudo pacman -Syyu"
+alias siuu="sudo pacman -Syu"
+alias wifix="~/Dotfiles/hypr/scripts/wifix.sh"
