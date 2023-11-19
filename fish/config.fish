@@ -10,5 +10,4 @@ set -gx EDITOR vim
 
 # alisases
 alias siuu="sudo pacman -Syu"
-alias wifix="~/Dotfiles/hypr/scripts/wifix.sh"
 alias emacs="emacs -a '' -c"
