@@ -39,5 +39,5 @@ for f in alacritty cava fish hypr neofetch rofi starship.toml waybar wlogout; do
 done
 
 # .doom.d directory
-[[ -d "${HOME}/.doom.d" ]] && mv "${HOME}/.doom.d" "${backup_dir}" && mkdir "${HOME}/.doom.d" # move previous doom config to backup directory and recreate a new .doom.d
+[[ -d "${HOME}/.doom.d" ]] && mv "${HOME}/.doom.d" "${backup_dir}" # move previous doom config to backup directory
 ln -s "${dotfiles_dir}/.doom.d" "${HOME}" # create the symlink with .doom.d directory
