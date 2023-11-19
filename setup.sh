@@ -1,12 +1,13 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 
-#config_dir="$HOME/.config"
-#dotfiles_dir="$HOME/Dotfiles"
-#backup_dir="$HOME/backup_dot_config"
-
-config_dir="$HOME/test_config"
-dotfiles_dir="$HOME/test_clone"
+config_dir="$HOME/.config"
+dotfiles_dir="$HOME/Dotfiles"
 backup_dir="$HOME/backup_dot_config"
+
+# variables for testing purpose
+#config_dir="$HOME/test_config"
+#dotfiles_dir="$HOME/test_clone"
+#backup_dir="$HOME/backup_dot_config"
 
 #function to do stuff depending on platform
 ask_platform () {
