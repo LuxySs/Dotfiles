@@ -40,4 +40,4 @@ done
 
 # .doom.d directory
 [[ -d "${HOME}/.doom.d" ]] && mv "${HOME}/.doom.d" "${backup_dir}" && mkdir "${HOME}/.doom.d" # move previous doom config to backup directory and recreate a new .doom.d
-ln -s "${dotfiles_dir}/.doom.d" "${HOME}/.doom.d" # create the symlink with .doom.d directory
+ln -s "${dotfiles_dir}/.doom.d" "${HOME}" # create the symlink with .doom.d directory
