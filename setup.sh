@@ -4,7 +4,7 @@ config_dir="$HOME/.config"
 dotfiles_dir="$HOME/Dotfiles"
 backup_dir="$HOME/backup_dot_config"
 
-# variables for testing purpose
+### variables for testing purpose
 #config_dir="$HOME/test_config"
 #dotfiles_dir="$HOME/test_clone"
 #backup_dir="$HOME/backup_dot_config"
@@ -32,8 +32,13 @@ done
 rm -rf "${backup_dir}" # make sure that it's empty before backing up
 mkdir "${backup_dir}" # create backup directory
 
-#move previous configs to backup directory
+# for files that should be in .config
 for f in alacritty cava fish hypr neofetch rofi starship.toml waybar wlogout; do
-    [[ -d "${config_dir}/${f}" || -f "${config_dir}/${f}" ]] && mv "${config_dir}/${f}" "${backup_dir}"
-    ln -s "${dotfiles_dir}/${f}" "${config_dir}/${f}"
+    [[ -d "${config_dir}/${f}" || -f "${config_dir}/${f}" ]] && mv "${config_dir}/${f}" "${backup_dir}" # move previous configs to backup directory
+    ln -s "${dotfiles_dir}/${f}" "${config_dir}/${f}" # create the symlink
 done
+
+# .doom.d directory
+.doom.d ;
+[[ -d "${HOME}/.doom.d" ]] && mv "${HOME}/.doom.d" "${backup_dir}" && mkdir "${HOME}/.doom.d" # move previous doom config to backup directory and recreate a new .doom.d
+ln -s "${dotfiles_dir}/.doom.d" "${HOME}/.doom.d" # create the symlink with .doom.d directory
