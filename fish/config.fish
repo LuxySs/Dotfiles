@@ -33,10 +33,16 @@ alias ll='eza -l --color=always --group-directories-first'  # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
 alias l.='eza -a | egrep "^\."'
 
-# pacman & yay
+# pacman & paru & yay
 alias pacsyu="sudo pacman -Syyu"	# update standard packages
-alias yaysua="yay -Sua --noconfirm"	# update AUR packages
-alias yaysua="yay -Syu --noconfirm"	# update Standard & AUR packages
+alias paru="paru -S"			# faster paru -S
+alias parusua="paru -sua"		# update aur packages
+alias parusua="paru -syu"		# update standard & aur packages
+alias yaysua="yay -sua --noconfirm"	# update aur packages
+alias yaysua="yay -syu --noconfirm"	# update standard & aur packages
+
+
+
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
