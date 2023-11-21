@@ -13,6 +13,8 @@ set -gx EDITOR nvim
 # funny garbage
 alias siuu="sudo pacman -Syu"
 
+alias pwd="pwd | wl-copy"
+
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
