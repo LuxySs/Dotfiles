@@ -13,10 +13,10 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 20)
-      doom-variable-pitch-font (font-spec :family "Mononoki Nerd Font" :size 20))
+(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 22)
+      doom-variable-pitch-font (font-spec :family "Mononoki Nerd Font" :size 22))
 
-(setq shell-file-name (executable-find "bash"))
+(setq shell-file-name (executable-find "/bin/bash"))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
