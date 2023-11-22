@@ -9,11 +9,18 @@ set -g fish_greeting #set to None (greeting message)
 
 set -gx EDITOR nvim
 
+
+### Functions ###
+function pwd_copy
+    set wd $(pwd) 
+    echo $wd && wl-copy $wd
+end
+
 ### ALIASES ###
 # funny garbage
 alias siuu="sudo pacman -Syu"
 
-alias pwd="pwd | wl-copy"
+alias pwdc="pwd_copy"
 
 # navigation
 alias ..='cd ..'

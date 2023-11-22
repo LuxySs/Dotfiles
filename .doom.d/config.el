@@ -18,6 +18,10 @@
 
 (setq shell-file-name (executable-find "/bin/bash"))
 
+(add-hook 'org-mode-hook 'org-fragtog-mode)
+
+(setq org-preview-latex-default-process 'dvisvgm)
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Lucas Verbeiren"

@@ -51,3 +51,4 @@
 
 (package! magit)
 (package! multiple-cursors)
+(package! org-fragtog)
