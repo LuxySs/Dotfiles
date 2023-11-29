@@ -22,7 +22,8 @@
 
 (setq org-preview-latex-default-process 'dvisvgm)
 
-(doom/set-frame-opacity 40)
+(add-to-list 'default-frame-alist '(alpha-background . 40))
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Lucas Verbeiren"
