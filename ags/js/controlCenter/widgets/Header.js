@@ -17,11 +17,11 @@ export default () => Widget.Box({
         Widget.Box({
             hexpand: true,
         }),
-        HoverableButton({
-            class_name: 'controlcenter__theme',
-            onPrimaryClickRelease: () => Utils.execAsync(`bash -c ${App.configDir}/bin/randomWallpaper`),
-            child: Widget.Icon({ icon: 'applications-graphics-symbolic', size: 16 }),
-        }),
+        // HoverableButton({
+            // class_name: 'controlcenter__theme',
+            // onPrimaryClickRelease: () => Utils.execAsync(`bash -c ${App.configDir}/bin/randomWallpaper`),
+            // child: Widget.Icon({ icon: 'applications-graphics-symbolic', size: 16 }),
+        // }),
         Separator(),
         HoverableButton({
             class_name: 'controlcenter__power',

@@ -4,7 +4,7 @@
 * {
   all: unset;
   font-size: 15px;
-  font-family: "MononokiNerdFont", sans-serif; 
+  font-family: "SauceCodeProNerdFont", sans-serif;
   font-weight: 500;
   padding: 0px;
   margin: 1px; }
@@ -47,14 +47,14 @@ window.popup menu {
 .bar {
   background-color: rgba(22, 19, 16, 0.8);
   margin: 0;
-  padding: 8px 8px;
+  padding: 2px 5px;
   border-bottom: 1px solid #34302c; }
 
 .workspaces,
 .clock,
 .bar__controlcenter_container,
-.weather,
-.activeapp,
+/* .weather, */
+/* .activeapp, */
 .notifications-indicator {
   transition: background-color 0.2s ease-in-out;
   border-radius: 100px;
@@ -64,8 +64,8 @@ window.popup menu {
   .workspaces:hover,
   .clock:hover,
   .bar__controlcenter_container:hover,
-  .weather:hover,
-  .activeapp:hover,
+  /* .weather:hover, */
+  /* .activeapp:hover, */
   .notifications-indicator:hover {
     background-color: rgba(233, 225, 220, 0.18); }
 
@@ -80,20 +80,20 @@ window.popup menu {
   .battery:hover {
     background-color: #ffddb9; }
 
-.active {
+/* .active {
   background: #f4bc7b;
-  color: #472a00; }
+  color: #472a00; } */
 
 /* Specific Styles */
-.activeapp,
+/* .activeapp, */
 .battery,
 /* .weather {
   font-weight: 700; } */
 
 .workspaces,
 .clock,
-.weather,
-.activeapp,
+/* .weather, */
+/* .activeapp, */
 .battery {
   padding: 0 14px; }
 
@@ -114,6 +114,7 @@ window.popup menu {
     background-color: #ffddb9; } */
 
 .workspaces {
+  margin-left: -30px;
   min-width: 260px; }
   .workspaces .workspace-indicator {
     min-width: 15px;
@@ -250,20 +251,19 @@ window.popup menu {
   font-weight: 500;
   padding: 10px 20px;
   border-radius: 100px;
-  background: #643e07;
-  color: #ffddb9; }
+  background: rgba(36, 34, 31, 1);
+  /* color: #ffddb9; */ }
 
-.controlcenter__theme,
 .controlcenter__power {
   min-width: 42px;
   min-height: 42px;
   border-radius: 100px;
-  background: #643e07;
-  color: #ffddb9; }
+  background: rgba(36, 34, 31, 1);
+  /* color: #ffddb9; */ }
 
 .quicksettings__button {
   background-color: rgba(255, 255, 255, 0.07);
-  color: #e9e1dc;
+  /* color: #e9e1dc; */
   padding: 0px;
   border-radius: 30px;
   min-width: 220px;
@@ -272,12 +272,12 @@ window.popup menu {
   .quicksettings__button > * {
     border-radius: 30px; }
   .quicksettings__button.active {
-    background-color: #f4bc7b;
-    color: #472a00; }
+    background-color: rgba(36, 34, 31, 1);
+    /* color: #472a00; */ }
     .quicksettings__button.active:hover {
-      background-color: #2d2926; }
+      background-color: rgba(36, 34, 31, 1); }
   .quicksettings__button:hover {
-    background-color: #2d2926; }
+    background-color: rgba(36, 34, 31, 1); }
   .quicksettings__button image {
     margin-left: 22px;
     margin-right: 18px; }
@@ -286,7 +286,7 @@ window.popup menu {
 
 .menu {
   margin-top: 8px;
-  background-color: #221f1c;
+  background-color:rgba(36, 34, 31, 1);
   color: #e9e1dc;
   padding: 20px 26px;
   border-radius: 30px;
@@ -304,23 +304,23 @@ window.popup menu {
     padding: 8px 12px;
     border-radius: 8px; }
     .menu button:hover {
-      background-color: #383431; }
+      background-color:rgba(36, 34, 31, 1); }
   .menu image {
     margin-right: 4px; }
 
 .player {
-  background-color: rgba(233, 225, 220, 0.08);
+  background-color:rgba(36, 34, 31, 1);
   border-radius: 30px;
   margin-top: 8px; }
 
 .shader {
-  background: rgba(0, 0, 0, 0.4);
+  background-color:rgba(36, 34, 31, 1);
   border-radius: 30px;
   padding: 20px; }
 
 .slider__tooltip {
-  color: #472a00;
-  background-color: #f4bc7b;
+  /* color: #472a00; */
+  background-color:rgba(36, 34, 31, 1);
   padding: 0;
   border-radius: 100px;
   min-width: 42px;
@@ -329,8 +329,8 @@ window.popup menu {
   font-size: 18px; }
 
 .volume__box .arrow {
-  color: #e9e1dc;
-  background-color: rgba(233, 225, 220, 0.08);
+  /* color: #e9e1dc; */
+  background-color:rgba(36, 34, 31, 1);
   padding: 0;
   border-radius: 100px;
   min-width: 42px;
@@ -348,7 +348,7 @@ window.popup menu {
   .brightness__slider trough highlight,
   .brightness__slider trough progress {
     border-radius: 100px;
-    background-color: #f4bc7b;
+    background-color: rgba(255, 0, 0, 0.6);
     border-radius: 100px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; }
   .volume__slider trough slider,
@@ -373,7 +373,7 @@ window.popup menu {
   .mixer__slider trough highlight,
   .mixer__slider trough progress {
     border-radius: 100px;
-    background-color: #f4bc7b;
+    background-color: rgba(255, 0, 0, 0.6);
     border-radius: 100px; }
   .mixer__slider trough slider {
     border-radius: 100px;
@@ -396,8 +396,8 @@ window.popup menu {
   min-height: 60px;
   border-radius: 20px;
   padding: 0;
-  background: #f4bc7b;
-  color: #472a00;
+  background: rgba(255, 0, 0, 0.6);
+  /* color: #472a00; */
   transition: all 0.3s; }
 
 .play-pause .paused,
@@ -406,8 +406,8 @@ window.popup menu {
   min-height: 60px;
   border-radius: 100px;
   padding: 0;
-  background: #f4bc7b;
-  color: #472a00;
+  background: rgba(255, 0, 0, 0.6);
+  /* color: #472a00; */
   transition: all 0.3s; }
 
 .position-slider trough {
@@ -430,7 +430,7 @@ window.popup menu {
   border-radius: 30px;
   transition: all 0.2s; }
   .cover-art .header-box {
-    color: #f4bc7b; }
+    /* color: #f4bc7b; */ }
   .cover-art .footer-box > * {
     font-size: 12px; }
   .cover-art .footer-box .previous {
@@ -463,7 +463,7 @@ window.popup menu {
   .notification-scrollable scrollbar * {
     all: unset; }
   .notification-scrollable scrollbar.vertical:hover slider {
-    background-color: #f4bc7b;
+    /* background-color: #f4bc7b; */
     min-width: 0.6em; }
   .notification-scrollable scrollbar.vertical slider {
     background-color: #998f86;
@@ -529,12 +529,12 @@ window.popup menu {
   margin-left: 14px;
   padding: 4px;
   border-radius: 100px;
-  background-color: #f4bc7b;
-  color: #472a00;
+  /* background-color: #f4bc7b; */
+  /* color: #472a00; */
   font-size: 20px;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
   .notification .close-button:hover {
-    background: #ffddb9; }
+    /* background: #ffddb9; */ }
 
 .notifications-popup-list {
   margin-top: 8px;
@@ -551,7 +551,7 @@ window.popup menu {
   margin-left: 24px; }
   .indicator .progress .fill {
     border-radius: 100px;
-    background-color: #f4bc7b;
+    /* background-color: #f4bc7b; */
     color: #472a00;
     min-width: 60px; }
     .indicator .progress .fill image {
@@ -574,7 +574,7 @@ window.popup menu {
       min-width: 60px;
       min-height: 60px;
       background: #643e07;
-      color: #ffddb9;
+      /* color: #ffddb9; */
       border-radius: 100px; }
     .calendar calendar.header {
       background-color: transparent;

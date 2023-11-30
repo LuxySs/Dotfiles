@@ -1,6 +1,6 @@
 import { USER } from 'resource:///com/github/Aylur/ags/utils.js';
 import Bar from './bar/Bar.js';
-// import Notifications from './notifications/Notifications.js';
+import Notifications from './notifications/Notifications.js';
 import ControlCenter from './controlCenter/ControlCenter.js';
 // import Applauncher from './applauncher/Applauncher.js';
 import OSD from './osd/OSD.js';
@@ -14,20 +14,20 @@ import { AppMixer } from './controlCenter/widgets/Volume.js';
 import { SinkSelector } from './controlCenter/widgets/Volume.js';
 
 setup.warnOnLowBattery();
-// setup.reloadCss();
+setup.reloadCss();
 setup.globalServices();
 
 const windows = () => [
     forMonitors(Bar),
-    // forMonitors(Notifications),
+    forMonitors(Notifications),
     forMonitors(OSD),
     ControlCenter(),
     // Applauncher(),
     Calendar(),
-    // BluetoothDevices(),
-    // WifiSelection(),
-    // AppMixer(),
-    // SinkSelector(),
+    BluetoothDevices(),
+    WifiSelection(),
+    AppMixer(),
+    SinkSelector(),
 ];
 
 export default {
