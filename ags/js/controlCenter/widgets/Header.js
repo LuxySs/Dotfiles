@@ -22,11 +22,11 @@ export default () => Widget.Box({
             // onPrimaryClickRelease: () => Utils.execAsync(`bash -c ${App.configDir}/bin/randomWallpaper`),
             // child: Widget.Icon({ icon: 'applications-graphics-symbolic', size: 16 }),
         // }),
-        Separator(),
-        HoverableButton({
-            class_name: 'controlcenter__power',
-            onPrimaryClickRelease: () => Utils.exec(`/home/${Utils.USER}/.config/rofi/bin/powermenu`),
-            child: Widget.Icon({ icon: 'system-shutdown', size: 16 }),
-        }),
+        // Separator(),
+        // HoverableButton({
+            // class_name: 'controlcenter__power',
+            // onPrimaryClickRelease: () => Utils.exec(`/usr/bin/wlogout`),
+            // child: Widget.Icon({ icon: 'system-shutdown', size: 16 }),
+        // }),
     ],
 });
