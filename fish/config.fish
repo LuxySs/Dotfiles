@@ -44,7 +44,6 @@ alias l.='eza -a | egrep "^\."'
 
 # pacman & paru & yay
 alias pacsyu="sudo pacman -Syyu"	# update standard packages
-alias paru="paru -S"			# faster paru -S
 alias parusua="paru -sua"		# update aur packages
 alias parusua="paru -syu"		# update standard & aur packages
 alias yaysua="yay -sua --noconfirm"	# update aur packages
