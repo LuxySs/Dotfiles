@@ -22,7 +22,7 @@
 
 (setq org-preview-latex-default-process 'dvisvgm)
 
-(add-to-list 'default-frame-alist '(alpha-background . 40))
+(add-to-list 'default-frame-alist '(alpha-background . 100))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
