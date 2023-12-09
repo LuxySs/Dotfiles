@@ -4,6 +4,8 @@ debug.log
 *.log
 *.tmp
 
+lazy-lock.json
+
 hyprpaper.conf
 hyprland.conf
 
