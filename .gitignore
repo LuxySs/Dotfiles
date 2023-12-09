@@ -1,0 +1,9 @@
+debug.log
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+hyprpaper.conf
+hyprland.conf
+
