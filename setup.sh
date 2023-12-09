@@ -33,7 +33,7 @@ rm -rf "${backup_dir}" # make sure that it's empty before backing up
 mkdir "${backup_dir}" # create backup directory
 
 # for files that should be in .config
-for f in ags alacritty cava fish hypr neofetch nvim rofi starship.toml wlogout; do
+for f in ags alacritty cava fish hypr neofetch nvim rofi starship.toml swaylock wlogout; do
     [[ -d "${config_dir}/${f}" || -f "${config_dir}/${f}" ]] && mv "${config_dir}/${f}" "${backup_dir}" # move previous configs to backup directory
     ln -s "${dotfiles_dir}/${f}" "${config_dir}/${f}" # create the symlink
 done
@@ -45,3 +45,4 @@ ln -s "${dotfiles_dir}/.doom.d" "${HOME}" # create the symlink with .doom.d dire
 # .bashrc 
 [[ -f "${HOME}/.bashrc" ]] && mv "${HOME}/.bashrc" "${backup_dir}" # move previous doom config to backup directory
 ln -s "${dotfiles_dir}/.bashrc" "${HOME}" # create the symlink with .bashrc directory
+
