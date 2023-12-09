@@ -14,10 +14,10 @@ datestr=%a, %e of %B
 image=/home/lulu/Dotfiles/wallpapers/gas_station.jpg
 
 # Fade in time
-fade-in=1
+fade-in=0.5
 
 # Effect for background
-# effect-blur=20x6
+effect-blur=20x6
 # effect-greyscale
 effect-pixelate=5
 
