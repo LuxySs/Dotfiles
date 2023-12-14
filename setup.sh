@@ -43,6 +43,5 @@ done
 ln -s "${dotfiles_dir}/.doom.d" "${HOME}" # create the symlink with .doom.d directory
 
 # .bashrc 
-[[ -f "${HOME}/.bashrc" ]] && mv "${HOME}/.bashrc" "${backup_dir}" # move previous doom config to backup directory
-ln -s "${dotfiles_dir}/.bashrc" "${HOME}" # create the symlink with .bashrc directory
-
+[[ -f "${HOME}/.bashrc" ]] && mv "${HOME}/.bashrc" "${backup_dir}" # move previous .bashrc to backup directory
+ln -s "${dotfiles_dir}/.bashrc" "${HOME}" # create the symlink with .bashrc file
