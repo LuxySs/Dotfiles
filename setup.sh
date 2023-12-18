@@ -1,15 +1,11 @@
 #!/bin/bash -ex
 
+# directories variables
 config_dir="$HOME/.config"
 dotfiles_dir="$HOME/Dotfiles"
 backup_dir="$HOME/backup_dot_config"
 
-### variables for testing purpose
-config_dir="$HOME/test_config"
-dotfiles_dir="$HOME/test_clone"
-backup_dir="$HOME/backup_dot_config"
-
-#function to do stuff depending on platform
+# setup hyprland/hyprpaper config depending on platform
 ask_platform () {
     echo "laptop or desktop ?"
     read computer_type
@@ -43,5 +39,6 @@ done
 ln -s "${dotfiles_dir}/.doom.d" "${HOME}" # create the symlink with .doom.d directory
 
 # .bashrc 
-[[ -f "${HOME}/.bashrc" ]] && mv "${HOME}/.bashrc" "${backup_dir}" # move previous .bashrc to backup directory
-ln -s "${dotfiles_dir}/.bashrc" "${HOME}" # create the symlink with .bashrc file
+[[ -f "${HOME}/.bashrc" ]] && mv "${HOME}/.bashrc" "${backup_dir}" # move previous doom config to backup directory
+ln -s "${dotfiles_dir}/.bashrc" "${HOME}" # create the symlink with .bashrc directory
+
