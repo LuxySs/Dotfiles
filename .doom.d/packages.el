@@ -52,8 +52,5 @@
 (package! magit)
 (package! multiple-cursors)
 (package! org-fragtog)
-(use-package origami
-  :ensure t
-  :config
-  (global-origami-mode)
-  (add-hook 'prog-mode-hook #'origami-mode))
+(package! imenu-list)
+(package! popup-imenu)
