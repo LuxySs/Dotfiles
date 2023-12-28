@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash 
 
 # directories variables
 config_dir="$HOME/.config"
@@ -8,11 +8,11 @@ ask_platform () {
     echo "laptop or desktop ?"
     read computer_type
     if [ "${computer_type}" = "laptop" ]; then
-        cp ".config/hypr/laptop_hyprland.conf" ".config/hypr/hyprland.conf"
-        cp ".config/hypr/laptop_hyprpaper.conf" ".config/hypr/hyprpaper.conf"
+        ln -s "$HOME/.config/hypr/laptop_hyprland.conf" "$HOME/.config/hypr/hyprland.conf"
+        ln -s "$HOME/.config/hypr/laptop_hyprpaper.conf" "$HOME/.config/hypr/hyprpaper.conf"
     elif [ "${computer_type}" = "desktop" ]; then
-        cp ".config/hypr/desktop_hyprland.conf" ".config/hypr/hyprland.conf"
-        cp ".config/hypr/desktop_hyprpaper.conf" ".config/hypr/hyprpaper.conf"
+        ln -s "$HOME/.config/hypr/desktop_hyprland.conf" "$HOME/.config/hypr/hyprland.conf"
+        ln -s "$HOME/.config/hypr/desktop_hyprpaper.conf" "$HOME/.config/hypr/hyprpaper.conf"
     else
         return 1
     fi
