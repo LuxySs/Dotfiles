@@ -1,6 +1,4 @@
 import os
-import subprocess as sp
-import time
 
 #home directory ("/" not included)
 homedir = os.path.expanduser('~')[1:]
