@@ -15,12 +15,13 @@ function pwd_copy
     echo $wd && wl-copy $wd
 end
 
+function "git lg"
+    git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 ### ALIASES ###
 # funny garbage
 alias siuu="sudo pacman -Syu"
 
 alias pwdc="pwd_copy"
-
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -48,10 +49,8 @@ alias parusua="paru -syu"		# update standard & aur packages
 alias yaysua="yay -sua --noconfirm"	# update aur packages
 alias yaysua="yay -syu --noconfirm"	# update standard & aur packages
 
-
-
-
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
