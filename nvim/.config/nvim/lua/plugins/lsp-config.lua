@@ -20,16 +20,20 @@ return {
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
-      lspconfig.pyright.setup({
-        capabilites = capabilities,
-      })
+        -- TypeScript support
       lspconfig.tsserver.setup({
         capabilites = capabilities,
       })
+        -- HTML support
       lspconfig.html.setup({
         capabilites = capabilities,
       })
+        -- Lua support
       lspconfig.lua_ls.setup({
+        capabilites = capabilities,
+      }) 
+        -- Python support
+      lspconfig.pyright.setup({        
         capabilites = capabilities,
       })
 
