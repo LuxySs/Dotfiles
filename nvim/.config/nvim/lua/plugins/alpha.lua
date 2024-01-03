@@ -1,48 +1,45 @@
-return {
-
-	"goolord/alpha-nvim",
-	dependencies = {
-		"nvim-tree/nvim-web-devicons",
-	},
-
-	config = function()
-		local alpha = require("alpha")
-		local dashboard = require("alpha.themes.dashboard")
-
-		dashboard.section.header.val = {
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                     ]],
-			[[       ████ ██████           █████      ██                     ]],
-			[[      ███████████             █████                             ]],
-			[[      █████████ ███████████████████ ███   ███████████   ]],
-			[[     █████████  ███    █████████████ █████ ██████████████   ]],
-			[[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
-			[[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
-			[[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-			[[                                                                       ]],
-		}
-
-		_Gopts = {
-			position = "center",
-			hl = "Type",
+ return {
+     "goolord/alpha-nvim",
+     config = function ()
+         local alpha = require'alpha'
+         local dashboard = require'alpha.themes.dashboard'
+         dashboard.section.header.val = {
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                     ]],
+            [[       ████ ██████           █████      ██                     ]],
+            [[      ███████████             █████                             ]],
+            [[      █████████ ███████████████████ ███   ███████████   ]],
+            [[     █████████  ███    █████████████ █████ ██████████████   ]],
+            [[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
+            [[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
+            [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
+            [[                                                                       ]],
+        }
+         dashboard.section.buttons.val = {
+             dashboard.button( "e", "  New file" , ":ene <BAR> startinsert <CR>"),
+             dashboard.button( "LDR bf", " Buffers" , ":Neotree buffers reveal float<CR>"),
+             dashboard.button( "LDR t", " Explore" , ":Neotree toggle<CR>"),
+             dashboard.button( "q", "󰅚  Quit NVIM" , ":qa<CR>"),
+         }
+        _Gopts = {
+            position = "center",
+            hl = "Type",
 			-- wrap = "overflow";
 		}
+         dashboard.section.footer.val = "(Arch user here)"
 
-		local function footer()
-			return "Haskell can suck mo' nads"
-		end
+         dashboard.config.opts.noautocmd = false
 
-		dashboard.section.footer.val = footer()
+         vim.cmd[[autocmd User AlphaReady echo 'ready']]
 
-		dashboard.opts.opts.noautocmd = true
-		alpha.setup(dashboard.opts)
-	end,
-}
+         alpha.setup(dashboard.opts)
+     end
+ }
