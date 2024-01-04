@@ -1,4 +1,4 @@
- return {
+return {
      "goolord/alpha-nvim",
      config = function ()
          local alpha = require'alpha'
@@ -34,7 +34,7 @@
             hl = "Type",
 			-- wrap = "overflow";
 		}
-         dashboard.section.footer.val = "(Arch user here)"
+         dashboard.section.footer.val = '\nArch user here -> mind the smell'
 
          dashboard.config.opts.noautocmd = false
 
