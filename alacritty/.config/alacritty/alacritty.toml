@@ -10,7 +10,10 @@ unfocused_hollow = true
 vi_mode_style = "Block"
 
 [font]
-size = 11.0
+size = 12.0
+
+[window]
+opacity = 0.2
 
 [font.bold]
 family = "Mononoki Nerd Font"
@@ -340,5 +343,3 @@ key = "N"
 mode = "Vi"
 mods = "Shift"
 
-[window]
-opacity = 0.2
