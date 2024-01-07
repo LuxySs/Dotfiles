@@ -1,5 +1,7 @@
 return {
     'numToStr/Comment.nvim',
-    opts = {},
+    opts = {
+        extra = { eol = 'gca' },
+    },
     lazy = false,
 }
