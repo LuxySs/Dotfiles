@@ -16,5 +16,3 @@ export EDITOR
 
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
-
-PATH=$PATH:$HOME/.local/bin #for streamdeck

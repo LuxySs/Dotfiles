@@ -7,9 +7,16 @@ starship init fish | source
 
 set -g fish_greeting #set to None (greeting message)
 
+### nvim ###
 set -gx EDITOR nvim
 
-### Functions ###
+### Rust ###
+set -x PATH $HOME/.cargo/bin $PATH
+set -x CARGO_HOME $HOME/.cargo
+set -x RUSTUP_HOME $HOME/.rustup
+
+
+#### Functions ###
 function pwd_copy
     set wd $(pwd) 
     echo $wd && wl-copy $wd
