@@ -12,6 +12,7 @@ return {
             "javascript",
             "yaml",
             "python",
+            "rust",
             "bash",
         }
       })
