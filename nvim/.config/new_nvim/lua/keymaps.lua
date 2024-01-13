@@ -6,8 +6,13 @@ vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
--- Commented this one cuz already used in kickstart  
+-- Commented this one cuz already used in kickstart
 -- vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
+
+-- Alpha menu
+vim.keymap.set('n', '<leader>a', ':Alpha<CR>')
+
+
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
