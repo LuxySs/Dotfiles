@@ -1,0 +1,142 @@
+{
+  "main": {
+    "id": "7d7c02bb72751d12",
+    "type": "split",
+    "children": [
+      {
+        "id": "88ccc5b8d30f616b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e26ddcddb4390d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "coucou.md",
+                "mode": "preview",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e5044eae19b19707",
+    "type": "split",
+    "children": [
+      {
+        "id": "6f90bb3d344526d9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ff2837a79af4b975",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4361f90044c42e0e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "94b3f58167114e9c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "right": {
+    "id": "4f7cbbf691ba3b57",
+    "type": "split",
+    "children": [
+      {
+        "id": "894a8d94d9836bb2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "227fa5cbf60b23b3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "coucou.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "404880e5e60c1b77",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "coucou.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e3894ed9e9168187",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "coucou.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "switcher:Open quick switcher": false
+    }
+  },
+  "active": "227fa5cbf60b23b3",
+  "lastOpenFiles": [
+    "coucou.md~",
+    "coucou.md"
+  ]
+}
