@@ -35,6 +35,7 @@ end
 alias siuu="sudo pacman -Syu"
 
 alias pwdc="pwd_copy"
+
 # navigation
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -64,8 +65,6 @@ alias yaysua="yay -syu --noconfirm"	# update standard & aur packages
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
 
 # note taking
 alias note='~/.config/hypr/scripts/notes_screenshot/setup_resources.sh && vim'
