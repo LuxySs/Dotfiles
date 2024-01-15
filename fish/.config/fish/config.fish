@@ -12,6 +12,7 @@ set -gx EDITOR nvim
 
 ### hypr scripts ###
 set -x PATH $HOME/.config/hypr/scripts/ $PATH
+set -x PATH $HOME/.config/hypr/scripts/notes_screenshot/ $PATH
 
 ### Rust ###
 set -x PATH $HOME/.cargo/bin $PATH
@@ -66,3 +67,5 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+# note taking
+alias note='~/.config/hypr/scripts/notes_screenshot/setup_resources.sh && vim'
