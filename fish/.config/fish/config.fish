@@ -21,7 +21,7 @@ set -x RUSTUP_HOME $HOME/.rustup
 
 
 #### Functions ###
-function pwd_copy
+function pwdc
     set wd $(pwd) 
     echo $wd && wl-copy $wd
 end
@@ -33,8 +33,6 @@ end
 ### ALIASES ###
 # funny garbage
 alias siuu="sudo pacman -Syu"
-
-alias pwdc="pwd_copy"
 
 # navigation
 alias ..='cd ..'
