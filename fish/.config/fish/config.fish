@@ -10,6 +10,9 @@ set -g fish_greeting #set to None (greeting message)
 ### nvim ###
 set -gx EDITOR nvim
 
+### hypr scripts ###
+set -x PATH $HOME/.config/hypr/scripts/ $PATH
+
 ### Rust ###
 set -x PATH $HOME/.cargo/bin $PATH
 set -x CARGO_HOME $HOME/.cargo
