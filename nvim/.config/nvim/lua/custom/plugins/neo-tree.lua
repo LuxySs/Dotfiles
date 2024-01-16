@@ -8,7 +8,7 @@ return {
     },
     -- added by myself
     opts = {
-        vim.keymap.set('n', '<leader>t', '<Cmd>Neotree toggle<CR>'),
+        vim.keymap.set('n', '<leader>f', '<Cmd>Neotree toggle<CR>'),
         vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {}),
         window = {
             mappings = {},
