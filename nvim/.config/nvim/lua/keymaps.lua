@@ -10,7 +10,7 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 -- vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 
 -- Alpha menu
-vim.keymap.set('n', '<leader>a', ':Alpha<CR>')
+vim.keymap.set('n', '<leader>m', ':Alpha<CR>')
 -- Start oil (file manager)
 vim.keymap.set('n', '<leader>o', ':Oil<CR>')
 -- Start term (Toggleterm)
