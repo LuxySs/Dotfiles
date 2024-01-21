@@ -9,3 +9,6 @@ lazy-lock.json
 hyprpaper.conf
 hyprland.conf
 
+# the nvchad directory
+/nvchad/nvim
+
