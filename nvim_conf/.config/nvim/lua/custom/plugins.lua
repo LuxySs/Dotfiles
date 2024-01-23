@@ -1,10 +1,12 @@
 local overrides = require("custom.configs.overrides")
+local programming_file_types = { "python", "c", "cpp", "rust" }
 
 ---@type NvPluginSpec[]
 local plugins = {
+  -- Import themes unrelated to NvChad
+  require("custom.themes"),
 
-  -- Override plugin definition options
-
+  -- Very important plugins
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -13,7 +15,6 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  -- override plugin configs
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,
@@ -37,8 +38,7 @@ local plugins = {
     end,
   },
 
-  -- debugging
-  {
+  { -- debugging
     {
       "rcarriga/nvim-dap-ui",
       event = "VeryLazy",
@@ -76,27 +76,51 @@ local plugins = {
       end,
     },
   },
-  -- Other plugins
-  {
+
+  { -- Menu / Greeter
     "goolord/alpha-nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("custom.configs.alpha")
     end,
   },
 
-  {
-    {
-      "L3MON4D3/LuaSnip",
-      lazy = false,
-    },
-    -- {
-    --   "evesdropper/luasnip-latex-snippets.nvim",
-    --   ft = { "tex", "latex" },
-    -- },
+  { -- File browser
+    "stevearc/oil.nvim",
+    lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("custom.configs.oil")
+    end,
   },
 
+  { -- notes taking / scientific report
+    {
+      "iamcco/markdown-preview.nvim",
+      ft = { "markdown" },
+      build = function()
+        vim.fn["mkdp#util#install"]()
+      end,
+    },
+
+    {
+      "nvim-neorg/neorg",
+      ft = { "norg" },
+      run = ":Neorg sync-parsers", -- This is the important bit!
+      config = function()
+        require("custom.configs.neorg")
+      end,
+    },
+
+    {
+      "lervag/vimtex",
+      ft = { "tex" },
+      init = function() end,
+    },
+  },
+
+  -- Other plugins
   {
     "max397574/better-escape.nvim", -- escape insert mod with jj without having delay
     event = "InsertEnter",
@@ -106,35 +130,22 @@ local plugins = {
   },
 
   {
-    "stevearc/oil.nvim",
-    lazy = false,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    "simrat39/symbols-outline.nvim",
+    ft = programming_file_types,
     config = function()
-      require("custom.configs.oil")
+      require("custom.configs.symbols-outline")
     end,
   },
 
-  {
-    "iamcco/markdown-preview.nvim",
-    ft = { "markdown" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-  },
-
-  {
-    "nvim-neorg/neorg",
-    ft = { "norg" },
-    run = ":Neorg sync-parsers", -- This is the important bit!
+  { -- Better looking interface to type commands
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
     config = function()
-      require("custom.configs.neorg")
+      require("noice").setup()
     end,
-  },
-
-  {
-    "lervag/vimtex",
-    init = function() end,
-    ft = { "tex" }, -- Specify the filetypes for which VimTeX should be enabled
   },
 }
 
