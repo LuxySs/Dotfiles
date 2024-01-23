@@ -32,24 +32,26 @@ M.mason = {
     -- web dev stuff
     --"css-lsp",
     --"html-lsp",
-    "typescript-language-server",
+    --"typescript-language-server",
     --"deno",
-    "prettier",
+    --"prettierd",
 
     -- c/cpp stuff
     "clangd",
     "clang-format",
+    "codelldb",
 
     -- python stuff
     "pyright",
     "ruff",
     "debugpy",
 
+    -- markdown
+    "marksman",
+    "prettierd",
+
     -- latex
     "latexindent",
-
-    -- debug
-    "codelldb",
   },
 }
 
