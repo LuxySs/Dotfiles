@@ -3,152 +3,158 @@ local programming_file_types = { "python", "c", "cpp", "rust" }
 
 ---@type NvPluginSpec[]
 local plugins = {
-  -- Import themes unrelated to NvChad
-  require("custom.themes"),
+	-- Import themes unrelated to NvChad
+	require("custom.themes"),
 
-  -- Very important plugins
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require("plugins.configs.lspconfig")
-      require("custom.configs.lspconfig")
-    end, -- Override to setup mason-lspconfig
-  },
+	-- Very important plugins
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			require("plugins.configs.lspconfig")
+			require("custom.configs.lspconfig")
+		end, -- Override to setup mason-lspconfig
+	},
 
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason,
-  },
+	{
+		"williamboman/mason.nvim",
+		opts = overrides.mason,
+	},
 
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
-  },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		opts = overrides.treesitter,
+	},
 
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
+	{
+		"nvim-tree/nvim-tree.lua",
+		opts = overrides.nvimtree,
+	},
 
-  {
-    "nvimtools/none-ls.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return require("custom.configs.null-ls")
-    end,
-  },
+	{
+		"nvimtools/none-ls.nvim",
+		event = "VeryLazy",
+		opts = function()
+			return require("custom.configs.null-ls")
+		end,
+	},
 
-  { -- debugging
-    {
-      "rcarriga/nvim-dap-ui",
-      event = "VeryLazy",
-      dependencies = "mfussenegger/nvim-dap",
-      config = function()
-        local dap = require("dap")
-        local dapui = require("dapui")
-        dapui.setup()
-        dap.listeners.after.event_initialized["dapui_config"] = function()
-          dapui.open()
-        end
-        dap.listeners.before.event_terminated["dapui_config"] = function()
-          dapui.close()
-        end
-        dap.listeners.before.event_exited["dapui_config"] = function()
-          dapui.close()
-        end
-      end,
-    },
-    {
-      "jay-babu/mason-nvim-dap.nvim",
-      event = "VeryLazy",
-      dependencies = {
-        "williamboman/mason.nvim",
-        "mfussenegger/nvim-dap",
-      },
-      opts = {
-        handlers = {},
-      },
-    },
-    {
-      "mfussenegger/nvim-dap",
-      config = function(_, _)
-        require("core.utils").load_mappings("dap")
-      end,
-    },
-  },
+	{ -- debugging
+		{
+			"rcarriga/nvim-dap-ui",
+			event = "VeryLazy",
+			dependencies = "mfussenegger/nvim-dap",
+			config = function()
+				local dap = require("dap")
+				local dapui = require("dapui")
+				dapui.setup()
+				dap.listeners.after.event_initialized["dapui_config"] = function()
+					dapui.open()
+				end
+				dap.listeners.before.event_terminated["dapui_config"] = function()
+					dapui.close()
+				end
+				dap.listeners.before.event_exited["dapui_config"] = function()
+					dapui.close()
+				end
+			end,
+		},
+		{
+			"jay-babu/mason-nvim-dap.nvim",
+			event = "VeryLazy",
+			dependencies = {
+				"williamboman/mason.nvim",
+				"mfussenegger/nvim-dap",
+			},
+			opts = {
+				handlers = {},
+			},
+		},
+		{
+			"mfussenegger/nvim-dap",
+			config = function(_, _)
+				require("core.utils").load_mappings("dap")
+			end,
+		},
+	},
 
-  { -- Menu / Greeter
-    "goolord/alpha-nvim",
-    lazy = false,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("custom.configs.alpha")
-    end,
-  },
+	{ -- rust specific
+		"mrcjkb/rustaceanvim",
+		event = "VeryLazy",
+		version = "^3",
+		ft = { "rust" },
+	},
 
-  { -- File browser
-    "stevearc/oil.nvim",
-    event = "VeryLazy",
-    lazy = false,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("custom.configs.oil")
-    end,
-  },
+	{ -- Menu / Greeter
+		"goolord/alpha-nvim",
+		lazy = false,
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("custom.configs.alpha")
+		end,
+	},
 
-  { -- notes taking / scientific report
-    {
-      "iamcco/markdown-preview.nvim",
-      ft = { "markdown" },
-      build = function()
-        vim.fn["mkdp#util#install"]()
-      end,
-    },
+	{ -- File browser
+		"stevearc/oil.nvim",
+		event = "VeryLazy",
+		lazy = false,
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("custom.configs.oil")
+		end,
+	},
 
-    {
-      "nvim-neorg/neorg",
-      ft = { "norg" },
-      run = ":Neorg sync-parsers", -- This is the important bit!
-      config = function()
-        require("custom.configs.neorg")
-      end,
-    },
+	{ -- notes taking / scientific report
+		{
+			"iamcco/markdown-preview.nvim",
+			ft = { "markdown" },
+			build = function()
+				vim.fn["mkdp#util#install"]()
+			end,
+		},
 
-    {
-      "lervag/vimtex",
-      ft = { "tex" },
-      init = function() end,
-    },
-  },
+		{
+			"nvim-neorg/neorg",
+			ft = { "norg" },
+			run = ":Neorg sync-parsers", -- This is the important bit!
+			config = function()
+				require("custom.configs.neorg")
+			end,
+		},
 
-  -- Other plugins
-  {
-    "max397574/better-escape.nvim", -- escape insert mod with jj without having delay
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
+		{
+			"lervag/vimtex",
+			ft = { "tex" },
+			init = function() end,
+		},
+	},
 
-  {
-    "simrat39/symbols-outline.nvim",
-    event = "VeryLazy",
-    ft = programming_file_types,
-    config = function()
-      require("custom.configs.symbols-outline")
-    end,
-  },
+	-- Other plugins
+	{
+		"max397574/better-escape.nvim", -- escape insert mod with jj without having delay
+		event = "InsertEnter",
+		config = function()
+			require("better_escape").setup()
+		end,
+	},
 
-  { -- Better looking interface to type commands
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
-    config = function()
-      require("noice").setup()
-    end,
-  },
+	{
+		"simrat39/symbols-outline.nvim",
+		event = "VeryLazy",
+		ft = programming_file_types,
+		config = function()
+			require("custom.configs.symbols-outline")
+		end,
+	},
+
+	{ -- Better looking interface to type commands
+		"folke/noice.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		config = function()
+			require("noice").setup()
+		end,
+	},
 }
 
 return plugins

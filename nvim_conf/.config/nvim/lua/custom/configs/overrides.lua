@@ -8,6 +8,7 @@ M.treesitter = {
     "css",
     "javascript",
     "typescript",
+    "rust",
     "tsx",
     "c",
     "markdown",
@@ -36,15 +37,18 @@ M.mason = {
     --"deno",
     --"prettierd",
 
-    -- c/cpp stuff
+    -- c/cpp
     "clangd",
     "clang-format",
     "codelldb",
 
-    -- python stuff
+    -- python
     "pyright",
     "ruff",
     "debugpy",
+
+    -- rust
+    "rust-analyzer",
 
     -- markdown
     "marksman",
