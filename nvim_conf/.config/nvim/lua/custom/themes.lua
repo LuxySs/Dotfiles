@@ -1,7 +1,10 @@
+-- enable the themes you want to use by changing enabled = [false / true]
+
 local themes = {
   {
     "catppuccin/nvim",
-    lazy = false,
+    enabled = false,
+    event = "VeryLazy",
     name = "catppuccin",
     priority = 1000,
     opts = { -- transparent_background = true,},
@@ -10,7 +13,8 @@ local themes = {
 
   {
     "maxmx03/dracula.nvim",
-    lazy = false,
+    enabled = false,
+    event = "VeryLazy",
     name = "dracula",
     priority = 1000,
     config = function()
@@ -20,7 +24,8 @@ local themes = {
 
   {
     "folke/tokyonight.nvim",
-    lazy = false,
+    enabled = false,
+    event = "VeryLazy",
     name = "tokyonight",
     priority = 1000,
     config = function()

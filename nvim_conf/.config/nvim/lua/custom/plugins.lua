@@ -88,6 +88,7 @@ local plugins = {
 
   { -- File browser
     "stevearc/oil.nvim",
+    event = "VeryLazy",
     lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
@@ -131,6 +132,7 @@ local plugins = {
 
   {
     "simrat39/symbols-outline.nvim",
+    event = "VeryLazy",
     ft = programming_file_types,
     config = function()
       require("custom.configs.symbols-outline")
