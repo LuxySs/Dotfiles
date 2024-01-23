@@ -79,7 +79,6 @@ local plugins = {
 
 	{ -- rust specific
 		"mrcjkb/rustaceanvim",
-		event = "VeryLazy",
 		version = "^3",
 		ft = { "rust" },
 	},
@@ -139,7 +138,6 @@ local plugins = {
 
 	{
 		"simrat39/symbols-outline.nvim",
-		event = "VeryLazy",
 		ft = programming_file_types,
 		config = function()
 			require("custom.configs.symbols-outline")
