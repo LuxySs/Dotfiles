@@ -137,11 +137,10 @@ local plugins = {
   },
 
   {
-    "simrat39/symbols-outline.nvim",
-    ft = programming_file_types,
-    config = function()
-      require("custom.configs.symbols-outline")
-    end,
+    "hedyhli/outline.nvim",
+    lazy = true,
+    cmd = { "Outline", "OutlineOpen" },
+    opts = {}, -- don't remove this otherwise it doesn't work
   },
 
   { -- Better looking interface to type commands
