@@ -2,34 +2,35 @@
 
 local themes = {
   {
-    "catppuccin/nvim",
-    enabled = false,
-    event = "VeryLazy",
-    name = "catppuccin",
-    priority = 1000,
-    opts = { -- transparent_background = true,},
-    },
-  },
-
-  {
-    "maxmx03/dracula.nvim",
-    enabled = false,
-    event = "VeryLazy",
-    name = "dracula",
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme("dracula")
-    end,
-  },
-
-  {
     "folke/tokyonight.nvim",
-    enabled = false,
+    enabled = true,
     event = "VeryLazy",
     name = "tokyonight",
     priority = 1000,
     config = function()
       vim.cmd("colorscheme tokyonight")
+    end,
+  },
+
+  {
+    "catppuccin/nvim",
+    enabled = true,
+    event = "VeryLazy",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      vim.cmd("colorscheme catppuccin")
+    end,
+  },
+
+  {
+    "maxmx03/dracula.nvim",
+    enabled = true,
+    event = "VeryLazy",
+    name = "dracula",
+    priority = 1000,
+    config = function()
+      vim.cmd("colorscheme dracula")
     end,
   },
 }

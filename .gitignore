@@ -10,5 +10,5 @@ hyprpaper.conf
 hyprland.conf
 
 # the nvchad directory
-/nvchad/nvim
+/nvchad/.config/nvim/
 

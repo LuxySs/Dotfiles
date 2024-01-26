@@ -154,6 +154,7 @@ local plugins = {
       require("noice").setup()
     end,
   },
+
 }
 
 return plugins
