@@ -6,7 +6,7 @@ unfocused_hollow = true
 vi_mode_style = "Block"
 
 [window]
-opacity = 0.2
+opacity = 0.4
 
 [font]
 size = 13.0
