@@ -1,5 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+  # Commands to run in interactive sessions can go here
 end
 
 ### setup starfish prompt ###
@@ -21,10 +21,22 @@ set -x RUSTUP_HOME $HOME/.rustup
 
 
 #### Functions ###
+# copy the current directory quickly
 function pwdc
-    set wd $(pwd) 
-    echo $wd && wl-copy $wd
+  set wd $(pwd)
+  echo $wd && wl-copy $wd
 end
+
+# launch a fabric module using "fabric {name of the module}"
+function fabric
+  set module $argv[1] 
+  source ~/fabric_stuff/venv/bin/activate.fish
+  python ~/.config/fabric/$module/$module.py
+end
+
+
+
+
 
 ### ALIASES ###
 # funny garbage
