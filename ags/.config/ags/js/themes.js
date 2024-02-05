@@ -6,8 +6,8 @@ import { Theme, WP, lightColors } from './settings/theme.js';
 
 export default [
     Theme({
-        name: 'Kitty Dark',
-        icon: '󰄛',
+        name: 'lulu',
+        // icon: '',
         'bar.separators': false,
         'desktop.clock.enable': false,
         'desktop.drop_shadow': true,
