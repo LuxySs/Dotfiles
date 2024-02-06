@@ -59,15 +59,15 @@ export async function setupHyprland() {
             batch.push(`monitor ${name},addreserved,0,0,0,0`);
     });
 
-    batch.push(
-        `general:border_size ${border_width}`,
-        `general:gaps_out ${wm_gaps}`,
-        `general:gaps_in ${Math.floor(wm_gaps / 2)}`,
-        `general:col.active_border rgba(00bdffdd) rgba(ee0000dd) 45deg`,
-        `general:col.inactive_border ${inactive_border}`,
-        `decoration:rounding 2`, // changed this one so that I can get more squared borders
-        `decoration:drop_shadow ${drop_shadow ? 'yes' : 'no'}`,
-    );
-
-    sendBatch(batch);
+    // batch.push(
+    //     `general:border_size ${border_width}`,
+    //     `general:gaps_out ${wm_gaps}`,
+    //     `general:gaps_in ${math.floor(wm_gaps / 2)}`,
+    //     `general:col.active_border rgba(00bdffdd) rgba(ee0000dd) 45deg`,
+    //     `general:col.inactive_border ${inactive_border}`,
+    //     `decoration:rounding 2`, // changed this one so that i can get more squared borders
+    //     `decoration:drop_shadow ${drop_shadow ? 'yes' : 'no'}`,
+    // );
+    //
+    // sendBatch(batch);
 }
