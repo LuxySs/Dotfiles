@@ -50,7 +50,9 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 # vim and emacs
+alias v='nvim'
 alias vim='nvim'
+alias fixvim='sudo rm -rf ~/.local/state/nvim/ && sudo rm -rf ~/.local/state/nvim/'
 alias em='/usr/bin/emacs -nw'
 alias emacs="emacsclient -c -a 'emacs'"
 alias rem="killall emacs || echo 'Emacs server not running'; /usr/bin/emacs --daemon"
