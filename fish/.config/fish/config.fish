@@ -57,12 +57,13 @@ alias em='/usr/bin/emacs -nw'
 alias emacs="emacsclient -c -a 'emacs'"
 alias rem="killall emacs || echo 'Emacs server not running'; /usr/bin/emacs --daemon"
 
-# Changing "ls" to "eza"
+# "eza" instead of "ls" & "tree" 
 alias ls='eza --color=always'
 alias la='eza -a --color=always --group-directories-first'  # all files and dirs
 alias ll='eza -l --color=always --group-directories-first'  # long format
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
 alias l.='eza -a | egrep "^\."'
+alias tree='eza --tree --color'
 
 # pacman & paru & yay
 alias pacsyu="sudo pacman -Syyu"	# update standard packages
