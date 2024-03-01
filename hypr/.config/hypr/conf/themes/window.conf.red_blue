@@ -3,9 +3,9 @@
 #----------------------------------------------------- 
 
 general {
-    #gaps_in = 7
-    #gaps_out = 14
-    #border_size = 2 
+    gaps_in = 5
+    gaps_out = 7
+    border_size = 1
     col.active_border = rgba(00bdffdd) rgba(ee0000dd) 45deg
     col.inactive_border = rgba(eeeeee00)
     layout = dwindle
