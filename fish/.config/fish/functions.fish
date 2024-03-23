@@ -11,3 +11,10 @@ function fabric
   source ~/fabric_stuff/venv/bin/activate.fish
   python ~/.config/fabric/$module/$module.py
 end
+
+function fuzzy-edit
+  set rootdir $argv[1]
+  fzf --walker-root=$rootdir
+end
+  
+  

@@ -1,3 +1,2 @@
-# ctrl-f for fuzzy-finder
-bind \cs 'fzf'
-bind \ch 'fzf --walker-root=$HOME'
+bind \cs 'bash ~/.config/fish/fuzzy_edit.sh'
+#bind \ch 'fzf --walker-root=$HOME'

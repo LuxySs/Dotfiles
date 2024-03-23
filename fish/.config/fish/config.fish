@@ -1,5 +1,6 @@
 source ~/.config/fish/aliases.fish
 source ~/.config/fish/functions.fish
+source ~/.config/fish/keybindings.fish
 
 if status is-interactive
   # Commands to run in interactive sessions can go here
