@@ -17,4 +17,6 @@ function fuzzy-edit
   fzf --walker-root=$rootdir
 end
   
-  
+function sesh
+  ~/.config/hypr/scripts/fuzzy_tmux.sh
+end

@@ -17,3 +17,5 @@ export EDITOR
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
 . "$HOME/.cargo/env"
+
+export PATH="$HOME/.tmuxifier/bin:$PATH"
