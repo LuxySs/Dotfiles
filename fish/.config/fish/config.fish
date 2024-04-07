@@ -15,6 +15,9 @@ set -g fish_greeting #set to None (greeting message)
 ### nvim ###
 set -gx EDITOR nvim
 
+### term $$$
+set -gx term foot 
+
 ### hypr scripts ###
 set -x PATH $HOME/.config/hypr/scripts/ $PATH
 set -x PATH $HOME/.config/hypr/scripts/notes_screenshot/ $PATH
