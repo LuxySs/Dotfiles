@@ -5,9 +5,22 @@ sort_dir_first = true
 edit = [
 	{ run = 'nvim "$@"', block = true },
 ]
-play = [
+player = [
 	{ run = 'mpv "$@"', orphan = true },
 ]
+docviewer = [
+	{ run = 'zathura "$@"', orphan = true },
+]
+imageviewer = [
+	{ run = 'loupe "$@"', orphan = true },
+]
 open = [
-	{ run = 'xdg-open "$@"', desc = "Open" },
+	{ run = 'xdg-open "$@"', orphan = true },
+]
+
+[open]
+rules = [
+	{ mime = "application/pdf", use = "docviewer" },
+	{ mime = "image/*", use = "imageviewer" },
+	{ mime = "video/*", use = "player" },
 ]
