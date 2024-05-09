@@ -1,8 +1,12 @@
 #### Functions ###
 # copy the current directory quickly
 function pwdc
-  set wd $(pwd)
-  echo $wd && wl-copy $wd
+  echo $(pwd)
+  wl-copy $(pwd)
+end
+
+function copycat
+  cat $argv[1] | wl-copy
 end
 
 # launch a fabric module using "fabric {name of the module}"
