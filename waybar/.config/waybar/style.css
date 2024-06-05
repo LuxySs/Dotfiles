@@ -37,16 +37,16 @@ window#waybar.hidden {
   margin: 3px 3px;
   border-radius: 15px;
   border: 0px;
-  color: #fff;
+  color: #51a4e7;
   /* background-color: #1e1e1e; */
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #505050;
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button.active {
-  color: #000;
-  background: #fff;
+  color: #ffffff; /* Text color */
+  background: #1e90ff; /* Background color */
   border-radius: 15px;
   min-width: 40px;
   transition: all 0.2s ease-in-out;
