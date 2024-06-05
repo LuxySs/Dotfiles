@@ -1,0 +1,47 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 35,
+  "spacing": 0,
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "modules-left": ["custom/logo", "hyprland/workspaces"],
+  "modules-right": ["pulseaudio", "battery", "clock", "tray"],
+
+  "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+          "active": " ",
+          "default": ""
+      },
+      "persistent-workspaces": {
+          "*": 5, // 5 workspaces by default on every monitor
+          //"HDMI-A-1": 3 // but only three on HDMI-A-1
+      }
+  },
+
+
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10
+  },
+
+  "clock": {
+    "format": "<span color='#6bfffd'>   </span>{:%I:%M %p}",
+    "format-alt": "<span color='#ff9854'>   </span>{:%a %b %d}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "custom/logo": {
+    "format": "",
+    "tooltip": false
+  },
+
+  "custom/sep": {
+    "format": "|",
+    "tooltip": false
+  },
+
+}
