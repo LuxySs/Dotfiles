@@ -70,8 +70,11 @@ window#waybar.hidden {
   border-radius: 20px;
   background-color: #1e1e1e;
 }
+
 #custom-logo {
   padding: 0px 10px;
+  font-size: 22px;
+  color: #1e90ff;
 }
 
 #tray {
